@@ -1,5 +1,4 @@
 class PetSerializer < ActiveModel::Serializer
-
-    has_many :ratings
-    has_many :wines
+    attributes :id, :name, :breed, :animal_type, :owner_id
+    belongs_to :user
   end

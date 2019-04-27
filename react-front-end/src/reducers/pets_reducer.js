@@ -9,11 +9,11 @@ export default function petsReducer(state = {
          
         case 'FETCH_PETS':
           console.log('fetching pets', state, action)
-          console.log({ 
-            ...state, 
-            pets: action.payload, 
-            loading: false 
-          } )
+          // console.log({ 
+          //   ...state, 
+          //   pets: action.payload, 
+          //   loading: false 
+          // } )
             return { 
               ...state, 
               pets: action.payload, 

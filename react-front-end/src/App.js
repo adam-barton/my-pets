@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import {Navbar} from 'react-bootstrap';
+import {connect} from 'react-redux';
+// import { fetchPets } from './actions/petActions';
 import PetsContainer from './containers/PetsContainer'
 
 function App() {
   return (
     <div className="App">
+      <PetsContainer />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -21,7 +25,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <PetsContainer />
     </div>
    
   );

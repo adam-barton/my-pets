@@ -8,7 +8,7 @@ import PetsContainer from './containers/PetsContainer'
 
 class App extends Component {
   componentDidMount() {
-    // this.props.fetchPets()
+    this.props.fetchPets()
   }
 
   render() {

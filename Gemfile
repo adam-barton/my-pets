@@ -18,6 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'pry'
 
+# is a utility for managing multiple processes.
+gem 'foreman', '~> 0.82.0'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

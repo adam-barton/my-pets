@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PetsContainer />
+        <PetsContainer pets={this.props.pets} />
         {/* <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -36,7 +36,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  // catPics: state.catsReducer.pictures
+  pets: state.petsReducer.pets
   })
   
   export default connect(mapStateToProps, { fetchPets })(App);

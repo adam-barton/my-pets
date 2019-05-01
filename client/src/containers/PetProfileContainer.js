@@ -6,7 +6,8 @@ class PetProfileContainer extends Component {
         const petsList = this.props.pets.map(
             (pet, index) => <ProfileCard 
             key={index} 
-            pet={pet} 
+            pet={pet}
+            deletePet={this.props.deletePet}
             />)
     return(
         <div>

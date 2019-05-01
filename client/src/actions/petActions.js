@@ -20,10 +20,25 @@ export const addPet = pet => {
         body: JSON.stringify({ pet })
       }
     return (dispatch) => {
-        console.log('/api/v1/pets', data)
         return fetch('/api/v1/pets', data)
         .then(response => response.json())
         .then(pet => { dispatch({ type: 'ADD_PET', payload: pet });
+        })
+    };
+}
+
+export const deletePet = id => { 
+    let data = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          }
+      }
+    return (dispatch) => {
+        return fetch(`/api/v1/pets/${ id }`, data)
+        .then(response => response.json())
+        .then(pet => { dispatch({ type: 'DELETE_PET', payload: pet });
         })
     };
 }

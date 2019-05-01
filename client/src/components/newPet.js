@@ -5,11 +5,11 @@ class NewPet extends Component {
 
     state = {
       name: '',
-      value: '',
+      animal_type: '',
       breed: '',
-      meds: '',
-      vetName: '',
-      vetPhone: ''
+      medications: '',
+      vet_name: '',
+      vet_phone: ''
     }
   
     handleChange = event => {
@@ -20,15 +20,15 @@ class NewPet extends Component {
   
     handleSubmit = event => {
       event.preventDefault();
-      
+        this.props.addPet(this.state)
   
       this.setState({
         name: '',
-        value: '',
+        animal_type: '',
         breed: '',
-        meds: '',
-        vetName: '',
-        vetPhone: ''
+        medications: '',
+        vet_name: '',
+        vet_phone: ''
       })
   
     }
@@ -49,7 +49,7 @@ class NewPet extends Component {
               <br></br>
 
             <label>Animal Type: 
-                <select name="animalType"value={this.state.animalType} onChange={this.handleChange}>
+                <select name="animal_type"value={this.state.animal_type} onChange={this.handleChange}>
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="housefly">Housefly</option>
@@ -74,15 +74,15 @@ class NewPet extends Component {
               <label>Vet: 
                 <input
                 type="text" 
-                name="vetName"
+                name="vet_name"
                 onChange={this.handleChange} 
-                value={this.state.vetName}
+                value={this.state.vet_name}
                 />
                 <input
                 type="text" 
-                name="vetPhone"
+                name="vet_phone"
                 onChange={this.handleChange} 
-                value={this.state.vetPhone}
+                value={this.state.vet_phone}
                 />
               </label>
               <br></br>
@@ -90,9 +90,9 @@ class NewPet extends Component {
               <label>Medications: 
                 <input
                 type="text" 
-                name="meds"
+                name="medications"
                 onChange={this.handleChange} 
-                value={this.state.meds}
+                value={this.state.medications}
                 />
               </label>
               <br></br>
@@ -103,5 +103,5 @@ class NewPet extends Component {
       );
     }
   };
-  
+
   export default NewPet;

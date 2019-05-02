@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ImageUpload from './ImageUpload'
+import {connect} from 'react-redux';
+import { addPet } from '../actions/petActions';
+
 
 class NewPet extends Component {
 
@@ -9,7 +11,8 @@ class NewPet extends Component {
       breed: '',
       medications: '',
       vet_name: '',
-      vet_phone: ''
+      vet_phone: '',
+      image: ''
     }
   
     handleChange = event => {
@@ -28,7 +31,8 @@ class NewPet extends Component {
         breed: '',
         medications: '',
         vet_name: '',
-        vet_phone: ''
+        vet_phone: '',
+        image: ''
       })
   
     }
@@ -50,6 +54,7 @@ class NewPet extends Component {
 
             <label>Animal Type: 
                 <select name="animal_type"value={this.state.animal_type} onChange={this.handleChange}>
+                    <option value=""></option>                    
                     <option value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="housefly">Housefly</option>
@@ -96,6 +101,17 @@ class NewPet extends Component {
                 />
               </label>
               <br></br>
+
+              <label> Add an image
+                <input 
+                  type="file" 
+                  name="image" 
+                  accept="image/*"
+                  onChange={this.handleChange} 
+                  value={this.state.image}
+                 />
+              </label>
+              <br></br>
               <br></br>
             <input type="submit" />
          </form>
@@ -104,4 +120,4 @@ class NewPet extends Component {
     }
   };
 
-  export default NewPet;
+  export default connect(null, { addPet })(NewPet);

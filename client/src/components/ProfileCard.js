@@ -1,10 +1,10 @@
 import React from 'react';
 
 function ProfileCard(props) {
+
     return(
         <div>
             <h1>{props.pet.name}</h1>
-            <img src={props.pet.image} />
             <button onClick={() => props.deletePet(props.pet.id)}> delete {props.pet.name}'s profile' </button>
             <p>Animal type: {props.pet.animal_type}</p>
             <p>Breed: {props.pet.breed}</p>

@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Pet, :type => :model do
   let(:pet) {
       User.create(
-          :id => 1, 
           :name => "Jerk Face",
           :email => "test@test.com"
       )
@@ -19,11 +18,13 @@ RSpec.describe Pet, :type => :model do
     expect(pet).to be_valid
   end
 
-#   it "has many rides" do
-#     user = User.create(name: "Max Charles", password: "password")
-#     ride = Ride.create(user_id: user.id, attraction_id: attraction.id)
-#     expect(attraction.rides.first).to eq(ride)
-#   end
+  it "correctly updates a Pet" do
+    user = User.create(name: "Max Charles", email: "test@test.com")
+    pet = Pet.create(user_id: user.id, name: "A Pet", animal_type: "Elephant")
+    pet.update(animal_type: "horse")
+    expect(pet.animal_type).to eq("horse")
+    expect(Pet.all.length).to eq(1)
+  end
 
 #   it "has many users through rides" do
 #     max = User.create(name: "Max Charles", password: "password")

@@ -42,3 +42,22 @@ export const deletePet = id => {
         })
     };
 }
+
+export const updatePet = pet => {
+    let data = {
+        method: 'PATCH',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ pet })
+      }
+    return (dispatch) => {
+        return fetch(`/api/v1/pets/${ pet.id }`, data)
+        .then(response => response.json())
+        .then(pet => console.log("Updated pet: ", pet))
+    };
+}
+
+// { dispatch({ type: 'UPDATE_PET', payload: pet });
+//         }

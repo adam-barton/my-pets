@@ -34,13 +34,14 @@ class NewPet extends Component {
         vet_phone: '',
         image: ''
       })
-  
+      return this.props.history.push("/")
     }
+
     render() {
       return (
         <div>
           <h3>Add a new pet</h3>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} >
                 <br></br>
               <label>Name: 
                 <input

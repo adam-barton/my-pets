@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 // import { bindActionCreators } from 'redux'
-import { fetchPets, addPet, deletePet } from '../actions/petActions';
+import { fetchPets, addPet, deletePet, updatePet } from '../actions/petActions';
 import ProfileCard from '../components/ProfileCard'
 
 class PetProfileContainer extends Component {
@@ -12,6 +12,7 @@ class PetProfileContainer extends Component {
             key={index} 
             pet={pet}
             deletePet={this.props.deletePet}
+            updatePet={this.props.updatePet}
             />)
     return(
         <div>
@@ -25,4 +26,4 @@ const mapStateToProps = state => ({
     pets: state.petsReducer.pets
     })
 
-export default connect(mapStateToProps, {fetchPets, addPet, deletePet})(PetProfileContainer);
+export default connect(mapStateToProps, {fetchPets, addPet, deletePet, updatePet})(PetProfileContainer);

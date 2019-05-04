@@ -32,16 +32,16 @@ const NavBar = () => {
       }}>
       Add a new pet
       </NavLink>
-      {/* <NavLink 
-      to="/actors" 
+      <NavLink 
+      to="/reminders/new" 
       exact 
       style={link}
       activeStyle={{
         background: 'darkblue'
       }}>
-      Actors
+      New Reminder
       </NavLink>
-      <NavLink 
+      {/* <NavLink 
       to="/directors" 
       exact 
       style={link}

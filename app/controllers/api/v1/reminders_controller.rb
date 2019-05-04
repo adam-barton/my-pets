@@ -1,28 +1,28 @@
-class RemindersController < ApplicationController
+class Api::V1::RemindersController < ApplicationController
+    skip_before_action :verify_authenticity_token
     require 'pry'
     def index
-        reminders = reminder.all 
+        reminders = Reminder.all 
         render json: reminders
     end
 
     def show
-        reminder = reminder.find_by(id: params[:id])
+        reminder = Reminder.find_by(id: params[:id])
         render json: reminder
     end
     
     def new
-        reminder = reminder.new
+        reminder = Reminder.new
     end
 
     def create
-        new_reminder = reminder.new(reminder_params)
-        new_reminder.user_id = 1
+        new_reminder = Reminder.new(reminder_params)
         new_reminder.save
         render json: new_reminder
     end
 
     def update
-        reminder = reminder.find_by(id: params[:id])
+        reminder = Reminder.find_by(id: params[:id])
         reminder.update(reminder_params)
         reminder.save
 
@@ -30,7 +30,7 @@ class RemindersController < ApplicationController
     end
 
     def destroy
-        reminder = reminder.find_by(id: params[:id])
+        reminder = Reminder.find_by(id: params[:id])
         reminder.destroy
 
         render json: reminder

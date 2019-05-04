@@ -1,4 +1,5 @@
 class Api::V1::PetsController < ApplicationController
+    skip_before_action :verify_authenticity_token
    require 'pry'
     def index
         @pets = Pet.all 

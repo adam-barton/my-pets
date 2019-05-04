@@ -7,6 +7,7 @@ export default function petsReducer(state = {
             return {...state, loading: true }
 
         case 'FETCH_PETS':
+            debugger
             return {
                 ...state,
                 pets: action.payload,

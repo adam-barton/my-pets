@@ -2,17 +2,17 @@ class Api::V1::PetsController < ApplicationController
     skip_before_action :verify_authenticity_token
    require 'pry'
     def index
-        @pets = Pet.all 
-        render json: @pets
+        pets = Pet.all 
+        render json: pets, include: ['reminders']
     end
 
     def show
-        @pet = Pet.find_by(id: params[:id])
-        render json: @pet
+        pet = Pet.find_by(id: params[:id])
+        render json: pet
     end
     
     def new
-        @pet = Pet.new
+        pet = Pet.new
     end
 
     def create

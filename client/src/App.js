@@ -6,7 +6,6 @@ import {BrowserRouter as Router,
 import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import { fetchPets } from './actions/petActions';
-import { fetchReminders } from './actions/reminderActions';
 import Header from './components/Header'
 import PetProfileContainer from './containers/PetProfileContainer'
 import NewPet from './components/NewPet';
@@ -15,7 +14,6 @@ import RemindersForm from './components/RemindersForm';
 class App extends Component {
   componentDidMount() {
     this.props.fetchPets()
-    this.props.fetchReminders()
   }
 
   render() {
@@ -34,4 +32,4 @@ class App extends Component {
   }
 }
   
-  export default connect(null, { fetchPets, fetchReminders })(App);
+  export default connect(null, { fetchPets })(App);

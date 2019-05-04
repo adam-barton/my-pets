@@ -6,7 +6,7 @@ import {BrowserRouter as Router,
 import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import { fetchPets } from './actions/petActions';
-import { fetchReminders } from './actions/ReminderActions';
+import { fetchReminders } from './actions/reminderActions';
 import Header from './components/Header'
 import PetProfileContainer from './containers/PetProfileContainer'
 import NewPet from './components/NewPet';

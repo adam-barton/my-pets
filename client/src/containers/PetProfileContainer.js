@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 // import { bindActionCreators } from 'redux'
 import { fetchPets, addPet, deletePet, updatePet } from '../actions/petActions';
 import ProfileCard from '../components/ProfileCard'
+import RemindersContainer from './RemindersContainer'
 
 class PetProfileContainer extends Component {
 
@@ -18,6 +19,7 @@ class PetProfileContainer extends Component {
         <div>
             <h1>Hello from PetProfileContainer.</h1>
             {petsList}
+            <RemindersContainer />
         </div>
     )}
 

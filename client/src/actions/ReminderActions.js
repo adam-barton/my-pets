@@ -1,10 +1,10 @@
 export const fetchReminders = () => {
 
     return (dispatch) => {
-        dispatch({ type: 'LOADING_Reminders' });
+        dispatch({ type: 'LOADING_REMINDERS' });
         return fetch('/api/v1/reminders')
         .then(response => response.json())
-        .then(pets => { dispatch({ type: 'FETCH_Reminders', payload: pets });
+        .then(reminders => { dispatch({ type: 'FETCH_REMINDERS', payload: reminders });
         }).catch(err => err)
     };
 }

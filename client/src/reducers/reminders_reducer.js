@@ -5,9 +5,11 @@ export default function remindersReducer(state = {
     switch (action.type) {
 
         case 'LOADING_REMINDERS':
+            console.log("loading reminders: ", state, action)
             return {...state, loading: true }
 
         case 'FETCH_REMINDERS':
+        console.log(state, action)
             return {
                 ...state,
                 reminders: action.payload,

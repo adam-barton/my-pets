@@ -28,6 +28,12 @@ body {
     color: #61dafb;
 }
 
+.ProfileCard {
+    border: 3px solid black;
+    margin: 3%;
+    padding: 20px;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

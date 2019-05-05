@@ -27,3 +27,20 @@ export const addReminder = reminder => {
             })
     };
 }
+
+export const deleteReminder = id => {
+    let data = {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        }
+    }
+    return (dispatch) => {
+        return fetch(`/api/v1/reminders/${ id }`, data)
+            .then(response => response.json())
+            .then(reminder => {
+                dispatch({ type: 'DELETE_REMINDER', payload: reminder });
+            })
+    };
+}

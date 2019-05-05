@@ -3,11 +3,20 @@ export default function remindersReducer(state = {
     reminders: []
 }, action) {
     switch (action.type) {
+        case 'LOADING_REMINDERS':
+        return {...state, loading: true }
 
-        case 'ADD_Reminder':
+    case 'FETCH_REMINDERS':
+        return {
+            ...state,
+            reminders: action.payload,
+            loading: false
+        }
+
+        case 'ADD_REMINDER':
             return {
                 ...state,
-                pets: [...state.reminders, action.payload],
+                reminders: [...state.reminders, action.payload],
                 loading: false
             }
 

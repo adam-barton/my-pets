@@ -4,10 +4,9 @@ import { addReminder } from '../actions/reminderActions';
 
 
 class RemindersForm extends Component {
-
     state = {
       category: '',
-      pet_id: '',
+    //   pet_id: this.props.pets[0].id,
       notes: ''
     }
   
@@ -23,7 +22,7 @@ class RemindersForm extends Component {
   
       this.setState({
         category: '',
-        pet_id: '',
+        // pet_id: this.props.pets[0].id,
         notes: ''
       })
       return this.props.history.push("/")
@@ -45,15 +44,12 @@ class RemindersForm extends Component {
               </label>
               <br></br>
 
-            <label>Pet: 
-                <input
-                type="text" 
-                name="pet_id"
-                onChange={this.handleChange} 
-                value={this.state.pet_id}
-                />
-              </label>
-              <br></br>
+              <label>Pet: 
+                <select onChange={(e) => this.setState({pet_id: e.target.value})}>
+                <option key={0} value={""}></option>
+                    {this.props.pets.map((pet) => <option key={pet.id} value={pet.id}>{pet.name}</option>)}
+                </select>
+                </label><br></br>
 
               <label>notes: 
                 <input
@@ -73,4 +69,8 @@ class RemindersForm extends Component {
     }
   };
 
-  export default connect(null, { addReminder })(RemindersForm);
+  const mapStateToProps = state => ({
+    pets: state.petsReducer.pets
+    })
+
+  export default connect(mapStateToProps, { addReminder })(RemindersForm);

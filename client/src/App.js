@@ -12,9 +12,9 @@ import NewPet from './components/NewPet';
 import RemindersForm from './components/RemindersForm';
 
 class App extends Component {
-  componentDidMount() {
-    this.props.fetchPets()
-  }
+  // componentDidMount() {
+  //   this.props.fetchPets()
+  // }
 
   render() {
     return (

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import PropTypes from 'prop-types';
 import { addReminder } from '../actions/reminderActions';
 
 
@@ -10,7 +11,7 @@ class RemindersForm extends Component {
       category: '',
     //   pet_id: this.props.pets[0].id,
       notes: '',
-      date: Date.today
+      // date: Date.today
     }
   
     handleChange = event => {

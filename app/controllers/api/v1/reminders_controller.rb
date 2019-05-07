@@ -39,6 +39,6 @@ class Api::V1::RemindersController < ApplicationController
     private
 
     def reminder_params 
-        params.require(:reminder).permit(:category, :pet_id, :notes)
+        params.require(:reminder).permit(:category, :pet_id, :notes, :date)
     end
 end

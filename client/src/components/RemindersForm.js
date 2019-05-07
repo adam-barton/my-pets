@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { addReminder } from '../actions/reminderActions';
 
 
@@ -7,7 +9,8 @@ class RemindersForm extends Component {
     state = {
       category: '',
     //   pet_id: this.props.pets[0].id,
-      notes: ''
+      notes: '',
+      date: Date.today
     }
   
     handleChange = event => {
@@ -23,7 +26,8 @@ class RemindersForm extends Component {
       this.setState({
         category: '',
         // pet_id: this.props.pets[0].id,
-        notes: ''
+        notes: '',
+        date: Date.today
       })
       return this.props.history.push("/")
     }
@@ -33,6 +37,18 @@ class RemindersForm extends Component {
         <div>
           <h3>Add a new reminder</h3>
           <form onSubmit={this.handleSubmit} >
+                <br></br>
+                <label> Date: 
+                <DatePicker
+                  selected={this.state.date}
+                  onChange={(e) => this.setState({date: e})}
+                  // showTimeSelect
+                  timeFormat="HH:mm"
+                  timeIntervals={15}
+                  dateFormat="MMMM d, yyyy"
+                  timeCaption="time"
+                />
+                  </label>
                 <br></br>
               <label>Category: 
                 <input

@@ -7,8 +7,8 @@ import ProfileCard from '../components/ProfileCard'
 
 class PetProfileContainer extends Component {
     componentDidMount() {
-        this.props.fetchPets()
         this.props.fetchReminders()
+        this.props.fetchPets()
       }
 
     render() {

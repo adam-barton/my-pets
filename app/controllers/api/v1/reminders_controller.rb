@@ -1,6 +1,7 @@
+require 'pry'
 class Api::V1::RemindersController < ApplicationController
     skip_before_action :verify_authenticity_token
-    require 'pry'
+
     def index
         reminders = Reminder.all 
         render json: reminders
@@ -17,6 +18,7 @@ class Api::V1::RemindersController < ApplicationController
 
     def create
         new_reminder = Reminder.new(reminder_params)
+        binding.pry
         new_reminder.save
         render json: new_reminder
     end

@@ -19,11 +19,9 @@ export const addReminder = reminder => {
         },
         body: JSON.stringify({ reminder })
     }
-    console.log(reminder)
     return (dispatch) => {
         return fetch('/api/v1/reminders', data)
             .then(response => response.json())
-            .then(r => console.log(r))
             .then(reminder => {
                 dispatch({ type: 'ADD_REMINDER', payload: reminder });
             })

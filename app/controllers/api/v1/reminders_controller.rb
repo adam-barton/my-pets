@@ -18,7 +18,6 @@ class Api::V1::RemindersController < ApplicationController
 
     def create
         new_reminder = Reminder.new(reminder_params)
-        binding.pry
         new_reminder.save
         render json: new_reminder
     end
@@ -41,6 +40,6 @@ class Api::V1::RemindersController < ApplicationController
     private
 
     def reminder_params 
-        params.require(:reminder).permit(:category, :pet_id, :notes, :date)
+        params.require(:reminder).permit(:category, :pet_id, :notes, :date, :displayable_date, :displayable_time)
     end
 end

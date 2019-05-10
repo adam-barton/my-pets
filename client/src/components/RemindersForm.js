@@ -4,7 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addReminder } from '../actions/reminderActions';
 
-
 class RemindersForm extends Component {
     state = {
       category: '',
@@ -27,9 +26,20 @@ class RemindersForm extends Component {
         category: '',
         // pet_id: this.props.pets[0].id,
         notes: '',
-        date: Date.today
+        // date: Date.today
       })
       return this.props.history.push("/")
+    }
+
+    setDay = event => {
+      const day = event.toString().slice(0, 15)
+      const time = event.toString().slice(16, 21)
+
+      this.setState({
+        displayable_date: day,
+        displayable_time: time,
+        date: event
+      })
     }
 
     render() {
@@ -41,8 +51,9 @@ class RemindersForm extends Component {
                 <label> Date: 
                 <DatePicker
                   selected={this.state.date}
-                  onChange={(e) => this.setState({date: e})}
-                  // showTimeSelect
+                  onChange={(e) => this.setDay(e)}
+                  // onChange={(e) => this.setState({date: e})}
+                  showTimeSelect
                   timeFormat="HH:mm"
                   timeIntervals={15}
                   dateFormat="MMMM d, yyyy"

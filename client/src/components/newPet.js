@@ -101,7 +101,7 @@ class NewPet extends Component {
                 value={this.state.medications}
                 />
               </label>
-              <br></br>
+              {/* <br></br>
 
               <label> Add an image
                 <input 
@@ -111,7 +111,7 @@ class NewPet extends Component {
                   onChange={this.handleChange} 
                   value={this.state.image}
                  />
-              </label>
+              </label> */}
               <br></br>
               <br></br>
             <input type="submit" />

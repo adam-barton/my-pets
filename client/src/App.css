@@ -40,6 +40,13 @@ body {
     padding: 20px;
 }
 
+.ReminderToday {
+    background-color: #f79125;
+    border: 3px solid black;
+    margin: 3%;
+    padding: 20px;
+}
+
 @keyframes App-logo-spin {
     from {
         transform: rotate(0deg);

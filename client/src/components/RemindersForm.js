@@ -24,7 +24,6 @@ class RemindersForm extends Component {
   
       this.setState({
         category: '',
-        // pet_id: this.props.pets[0].id,
         notes: '',
         // date: Date.today
       })
@@ -34,7 +33,7 @@ class RemindersForm extends Component {
     setDay = event => {
       const day = event.toString().slice(0, 15)
       const time = event.toString().slice(16, 21)
-
+      // debugger
       this.setState({
         displayable_date: day,
         displayable_time: time,
@@ -48,7 +47,7 @@ class RemindersForm extends Component {
           <h3>Add a new reminder</h3>
           <form onSubmit={this.handleSubmit} >
                 <br></br>
-                <label> Date: 
+                <label> Date: </label>
                 <DatePicker
                   selected={this.state.date}
                   onChange={(e) => this.setDay(e)}
@@ -59,7 +58,6 @@ class RemindersForm extends Component {
                   dateFormat="MMMM d, yyyy"
                   timeCaption="time"
                 />
-                  </label>
                 <br></br>
               <label>Category: 
                 <input

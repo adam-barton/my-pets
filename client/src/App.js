@@ -12,16 +12,13 @@ import NewPet from './components/NewPet';
 import RemindersForm from './components/RemindersForm';
 
 class App extends Component {
-  // componentDidMount() {
-  //   this.props.fetchPets()
-  // }
 
   render() {
     return (
       <React.Fragment>
         <Header />
         <Router>
-          <NavBar />
+          <NavBar reminders={this.props.reminders} />
           <Route exact path="/new-pet" component={NewPet} />
           <Route exact path="/" component={PetProfileContainer} />
           <Route exact path="/reminders/new" component={RemindersForm} />
@@ -31,5 +28,8 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  reminders: state.remindersReducer.reminders
+  })
   
-  export default connect(null, { fetchPets })(App);
+  export default connect(mapStateToProps, { fetchPets })(App);

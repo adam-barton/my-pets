@@ -1,6 +1,5 @@
 import React from 'react';
 import RemindersContainer from '../containers/RemindersContainer';
-import CalendarContainer from '../containers/CalendarContainer';
 
 function ProfileCard(props) {
 
@@ -13,7 +12,6 @@ function ProfileCard(props) {
             <p>Medications: {props.pet.medications}</p>
             <p>Vet: {props.pet.vet_name} {props.pet.vet_phone}</p>
             <RemindersContainer pet={props.pet} />
-            {/* <CalendarContainer /> */}
         </div>
     )
 }

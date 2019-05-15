@@ -7,9 +7,7 @@ import { addReminder } from '../actions/reminderActions';
 class RemindersForm extends Component {
     state = {
       category: '',
-    //   pet_id: this.props.pets[0].id,
-      notes: '',
-      // date: Date.today
+      notes: ''
     }
   
     handleChange = event => {
@@ -24,8 +22,7 @@ class RemindersForm extends Component {
   
       this.setState({
         category: '',
-        notes: '',
-        // date: Date.today
+        notes: ''
       })
       return this.props.history.push("/")
     }
@@ -33,7 +30,6 @@ class RemindersForm extends Component {
     setDay = event => {
       const day = event.toString().slice(0, 15)
       const time = event.toString().slice(16, 21)
-      // debugger
       this.setState({
         displayable_date: day,
         displayable_time: time,
@@ -51,10 +47,9 @@ class RemindersForm extends Component {
                 <DatePicker
                   selected={this.state.date}
                   onChange={(e) => this.setDay(e)}
-                  // onChange={(e) => this.setState({date: e})}
                   showTimeSelect
                   timeFormat="HH:mm"
-                  timeIntervals={15}
+                  timeIntervals={1}
                   dateFormat="MMMM d, yyyy"
                   timeCaption="time"
                 />

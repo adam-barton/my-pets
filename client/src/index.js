@@ -5,6 +5,8 @@ import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import { createStore, applyMiddleware } from 'redux'
 import rootReducer from './reducers'
+import { transitions, positions, Provider as AlertProvider } from 'react-alert'
+import AlertTemplate from 'react-alert-template-basic'
 
 import App from './App';
 import './index.css';
@@ -15,7 +17,9 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
     <div className="App">
     <Provider store={store} >
-        <App/>
+        <AlertProvider template={AlertTemplate} >
+            <App />
+        </AlertProvider>
     </Provider>
     </div>,
     document.getElementById('root')

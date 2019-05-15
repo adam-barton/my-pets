@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-// import { bindActionCreators } from 'redux'
 import { fetchPets, addPet, deletePet, updatePet } from '../actions/petActions';
 import {fetchReminders} from '../actions/reminderActions'
 import ProfileCard from '../components/ProfileCard'
@@ -10,7 +9,6 @@ class PetProfileContainer extends Component {
         this.props.fetchReminders()
         this.props.fetchPets()
       }
-
     render() {
         const petsList = this.props.pets.map(
             (pet, index) => <ProfileCard 
@@ -21,7 +19,6 @@ class PetProfileContainer extends Component {
             />)
     return(
         <div>
-            <h1>Hello from PetProfileContainer.</h1>
             {petsList}
         </div>
     )}

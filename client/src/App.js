@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import { fetchPets } from './actions/petActions';
 import Header from './components/Header'
+import Footer from './components/Footer'
 import PetProfileContainer from './containers/PetProfileContainer'
 import NewPet from './components/NewPet';
 import RemindersForm from './components/RemindersForm';
@@ -23,6 +24,7 @@ class App extends Component {
           <Route exact path="/" component={PetProfileContainer} />
           <Route exact path="/reminders/new" component={RemindersForm} />
         </Router>
+        <Footer />
       </React.Fragment>
       
     );

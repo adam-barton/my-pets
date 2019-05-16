@@ -6,6 +6,7 @@ import {BrowserRouter as Router,
 import NavBar from './components/NavBar';
 import {connect} from 'react-redux';
 import { fetchPets } from './actions/petActions';
+import {deleteReminder} from './actions/reminderActions'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import PetProfileContainer from './containers/PetProfileContainer'
@@ -19,7 +20,7 @@ class App extends Component {
       <React.Fragment>
         <Header />
         <Router>
-          <NavBar reminders={this.props.reminders} />
+          <NavBar deleteReminder={this.props.deleteReminder} today_reminders={this.props.today_reminders} />
           <Route exact path="/new-pet" component={NewPet} />
           <Route exact path="/" component={PetProfileContainer} />
           <Route exact path="/reminders/new" component={RemindersForm} />
@@ -31,7 +32,8 @@ class App extends Component {
   }
 }
 const mapStateToProps = state => ({
-  reminders: state.remindersReducer.reminders
+  reminders: state.remindersReducer.reminders,
+  today_reminders: state.remindersReducer.today_reminders
   })
   
-  export default connect(mapStateToProps, { fetchPets })(App);
+  export default connect(mapStateToProps, { fetchPets, deleteReminder })(App);

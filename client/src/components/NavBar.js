@@ -47,7 +47,7 @@ const alert = useAlert()
       </NavLink>
       <button 
       onClick={() => {
-        alert.show(<Notify />)
+        alert.show(<Notify today_reminders={props.today_reminders} deleteReminder={props.deleteReminder} />)
         }}
       style={link}
       >Today's Reminders</button>

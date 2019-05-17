@@ -24,6 +24,17 @@ body {
     color: white;
 }
 
+.App-footer {
+    background-color: #282c34;
+    height: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(6px + 1vmin);
+    color: white;
+}
+
 .App-link {
     color: #61dafb;
 }
@@ -34,17 +45,34 @@ body {
     padding: 20px;
 }
 
+.reminders {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .ReminderCard {
     border: 3px solid black;
-    margin: 3%;
-    padding: 20px;
+    margin: 2%;
+    padding: 5px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .ReminderToday {
     background-color: #f79125;
     border: 3px solid black;
-    margin: 3%;
-    padding: 20px;
+    margin: 2%;
+    padding: 5px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes App-logo-spin {

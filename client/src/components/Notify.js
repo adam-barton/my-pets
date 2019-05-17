@@ -1,16 +1,14 @@
 import React from 'react';
 import ReminderCard from './ReminderCard'
-import { useAlert } from 'react-alert'
 
 function Notify(props) {
-    const alert = useAlert()
-
     const todayAlerts = props.today_reminders.map((reminder, index) => {
-        if (reminder) {
+        // let reminders = <p>No reminders today.</p>
+        // if (props.today_reminders.lengh > 0 ) {
             return <ReminderCard key={reminder.id} reminder={reminder} deleteReminder={props.deleteReminder} />
-       } else {
-           return "No reminders today."
-       }
+    //    } else {
+    //       return reminders
+    //    }
     })
 
     return(

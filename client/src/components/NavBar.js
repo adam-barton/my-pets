@@ -15,6 +15,9 @@ const link = {
 
 const NavBar = props => {
 const alert = useAlert()
+  // const todayAlerts = props.today_reminders.map((reminder, index) => {
+  //   alert.show(<Notify today_reminders={props.today_reminders} deleteReminder={props.deleteReminder} />)
+  // })
 
   return (
     <div className="navbar" bg="light">
@@ -47,6 +50,7 @@ const alert = useAlert()
       </NavLink>
       <button 
       onClick={() => {
+        // {todayAlerts()}
         alert.show(<Notify today_reminders={props.today_reminders} deleteReminder={props.deleteReminder} />)
         }}
       style={link}

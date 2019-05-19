@@ -1,4 +1,5 @@
 import React from 'react';
+import ReminderNotes from './ReminderNotes'
 
 function ReminderCard(props) {
 
@@ -21,7 +22,7 @@ function ReminderCard(props) {
             <br></br> 
             {props.reminder.displayable_time}</b></p>
             <p>Notes: {props.reminder.notes}</p>
-            <button onClick={() => props.deleteReminder(props.reminder.id)}> delete </button>
+            <button variant="link" onClick={() => props.deleteReminder(props.reminder.id)}> delete </button>
         </div>
     )
 }

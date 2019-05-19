@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import PetProfileContainer from './containers/PetProfileContainer'
 import NewPet from './components/NewPet';
 import RemindersForm from './components/RemindersForm';
+import Notify from './components/Notify'
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
         <Header />
         <Router>
           <NavBar deleteReminder={this.props.deleteReminder} today_reminders={this.props.today_reminders} />
+          <Notify today_reminders={this.props.today_reminders} />
           <Route exact path="/new-pet" component={NewPet} />
           <Route exact path="/" component={PetProfileContainer} />
           <Route exact path="/reminders/new" component={RemindersForm} />

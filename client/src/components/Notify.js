@@ -1,20 +1,30 @@
 import React from 'react';
-import ReminderCard from './ReminderCard'
+import { useAlert } from 'react-alert'
+import Button from 'react-bootstrap/Button';
+
 
 function Notify(props) {
-    const todayAlerts = props.today_reminders.map((reminder, index) => {
-        // let reminders = <p>No reminders today.</p>
-        // if (props.today_reminders.lengh > 0 ) {
-            return <ReminderCard key={reminder.id} reminder={reminder} deleteReminder={props.deleteReminder} />
-    //    } else {
-    //       return reminders
-    //    }
-    })
+const alert = useAlert()
+    // const todayAlerts = props.today_reminders.map((reminder, index) => {
+    // //     // let reminders = <p>No reminders today.</p>
+    // //     // if (props.today_reminders.lengh > 0 ) {
+    // //         // return <ReminderCard key={reminder.id} reminder={reminder} deleteReminder={props.deleteReminder} />
+    //         return 
+    //             alert.show(<div classname="TodayReminder"><p>{reminder.category} at {reminder.displayable_time}</p></div>)
+    // })
+
+  function todaysAlerts() {
+        props.today_reminders.map((reminder, index) => {
+               alert.show(<p>{reminder.category} at {reminder.displayable_time}</p>)
+        })
+    } 
 
     return(
         <div>
-            <h2>Today's Reminders: </h2>
-            {todayAlerts}
+            <Button variant="info" onClick={() => { 
+        {todaysAlerts()}
+        }}
+      >Today's Reminders</Button>      
         </div>
     )
 }

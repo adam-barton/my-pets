@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAlert } from 'react-alert'
-import Notify from './Notify'
 
 
 const link = {
@@ -14,10 +13,6 @@ const link = {
 }
 
 const NavBar = props => {
-const alert = useAlert()
-  // const todayAlerts = props.today_reminders.map((reminder, index) => {
-  //   alert.show(<Notify today_reminders={props.today_reminders} deleteReminder={props.deleteReminder} />)
-  // })
 
   return (
     <div className="navbar" bg="light">
@@ -48,13 +43,6 @@ const alert = useAlert()
       }}>
       New Reminder
       </NavLink>
-      <button 
-      onClick={() => {
-        // {todayAlerts()}
-        alert.show(<Notify today_reminders={props.today_reminders} deleteReminder={props.deleteReminder} />)
-        }}
-      style={link}
-      >Today's Reminders</button>
     </div>
   );
 };

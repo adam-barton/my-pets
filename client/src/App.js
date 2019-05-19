@@ -21,7 +21,7 @@ class App extends Component {
       <React.Fragment>
         <Header />
         <Router>
-          <NavBar deleteReminder={this.props.deleteReminder} today_reminders={this.props.today_reminders} />
+          <NavBar />
           <Notify today_reminders={this.props.today_reminders} />
           <Route exact path="/new-pet" component={NewPet} />
           <Route exact path="/" component={PetProfileContainer} />

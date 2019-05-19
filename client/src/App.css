@@ -33,6 +33,10 @@ body {
     justify-content: center;
     font-size: calc(6px + 1vmin);
     color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .App-link {
@@ -69,6 +73,19 @@ body {
     margin: 2%;
     padding: 5px;
     width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navbar {
+    /* justify-content: center; */
+}
+
+.PetForm {
+    margin: 2%;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;

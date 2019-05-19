@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useAlert } from 'react-alert'
+import Nav from 'react-bootstrap/Nav'
 
 
 const link = {
@@ -15,7 +15,8 @@ const link = {
 const NavBar = props => {
 
   return (
-    <div className="navbar" bg="light">
+    // <div className="Navbar" bg="light">
+      <Nav className="justify-content-center Navbar">
     <NavLink
       to="/"
       exact
@@ -43,7 +44,8 @@ const NavBar = props => {
       }}>
       New Reminder
       </NavLink>
-    </div>
+      </Nav>
+    // </div>
   );
 };
 

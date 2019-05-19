@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addPet } from '../actions/petActions';
+import Form from 'react-bootstrap/Form'
+
 
 
 class NewPet extends Component {
@@ -39,9 +41,76 @@ class NewPet extends Component {
 
     render() {
       return (
-        <div>
+        <div className="PetForm">
           <h3>Add a new pet</h3>
-          <form onSubmit={this.handleSubmit} >
+          <Form onSubmit={this.handleSubmit} >
+            <Form.Group controlId="petForm.formBasicName">
+              {/* <Form.Label>Name</Form.Label> */}
+              <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.name} 
+                type="text" 
+                name="name"
+                placeholder="Pet's Name" />
+            </Form.Group>
+
+            <Form.Group controlId="petForm.ControlSelect"
+                onChange={this.handleChange} 
+                value={this.state.animal_type} 
+                >
+                {/* <Form.Label>Pet Type</Form.Label> */}
+                <Form.Control as="select" name="animal_type">
+                <option value="">Pet Type</option>                    
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="housefly">Housefly</option>
+                    <option value="rock">Rock</option>
+                    <option value="goat">Goat</option>
+                    <option value="elephant">Elephant</option>
+                    <option value="snake">Snake</option>
+              </Form.Control>
+            </Form.Group>
+
+            <Form.Group controlId="petForm.formBasicBreed">
+              {/* <Form.Label>Breed</Form.Label> */}
+              <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.breed} 
+                type="text" 
+                name="breed"
+                placeholder="Breed" />
+            </Form.Group>
+
+            <Form.Group controlId="petForm.formGridVetName">
+              {/* <Form.Label>Name</Form.Label> */}
+              <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.vet_name} 
+                type="text" 
+                name="vet_name"
+                placeholder="Vet Name" />
+                </Form.Group>
+                
+            <Form.Group controlId="petForm.formGridVetPhone">
+                {/* <Form.Label>Phone</Form.Label> */}
+                <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.vet_phone} 
+                type="text" 
+                name="vet_phone"
+                placeholder="Vet Phone" />
+            </Form.Group>
+
+            <Form.Group controlId="petForm.formBasicMeds">
+              {/* <Form.Label>Name</Form.Label> */}
+              <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.medications} 
+                type="text" 
+                name="medications"
+                placeholder="Pet's Medications" />
+            </Form.Group>
+{/* 
                 <br></br>
               <label>Name: 
                 <input
@@ -113,9 +182,9 @@ class NewPet extends Component {
                  />
               </label> */}
               <br></br>
-              <br></br>
+              <br></br> */}
             <input type="submit" />
-         </form>
+         </Form>
         </div>
       );
     }

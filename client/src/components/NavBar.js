@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
+import { useAlert } from 'react-alert'
+
 
 
 const link = {
@@ -13,6 +15,7 @@ const link = {
 }
 
 const NavBar = props => {
+  const alert = useAlert()
 
   return (
     // <div className="Navbar" bg="light">
@@ -43,6 +46,13 @@ const NavBar = props => {
         background: 'darkblue'
       }}>
       New Reminder
+      </NavLink>
+      <NavLink 
+      to="#" 
+      onClick={() => {alert.show("Calendar view is coming Soon")}}
+      style={link}
+      >
+      Calendar
       </NavLink>
       </Nav>
     // </div>

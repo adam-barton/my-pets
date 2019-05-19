@@ -14,15 +14,17 @@ const alert = useAlert()
     // })
 
   function todaysAlerts() {
+    if (props.today_reminders.length > 0) {     
         props.today_reminders.map((reminder, index) => {
-               alert.show(<p>{reminder.category} at {reminder.displayable_time}</p>)
-        })
+            alert.show(<p>{reminder.category} at {reminder.displayable_time}</p>)
+          })
+    } else {alert.show("No reminders today")}
     } 
 
     return(
         <div>
             <Button variant="info" onClick={() => { 
-        {todaysAlerts()}
+        todaysAlerts()
         }}
       >Today's Reminders</Button>      
         </div>
@@ -30,3 +32,4 @@ const alert = useAlert()
 }
 
 export default Notify
+

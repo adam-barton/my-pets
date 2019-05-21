@@ -79,17 +79,23 @@ body {
     justify-content: center;
 }
 
-.Navbar {
-    /* justify-content: center; */
+.ReminderButton {
+    margin: 10px;
 }
 
-.PetForm {
-    margin: 2%;
+.PetFormContainer {
+    margin: auto;
     padding: 5px;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column;*/
     align-items: center;
+    align-self: center;
     justify-content: center;
+    max-width: 50%;
+}
+
+.NavBar {
+    width: 40%;
 }
 
 @keyframes App-logo-spin {

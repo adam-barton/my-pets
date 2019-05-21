@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { addPet } from '../actions/petActions';
 import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 
 
@@ -41,9 +42,9 @@ class NewPet extends Component {
 
     render() {
       return (
-        <div className="PetForm">
+        <div className="PetFormContainer">
           <h3>Add a new pet</h3>
-          <Form onSubmit={this.handleSubmit} >
+          <Form className="PetForm"onSubmit={this.handleSubmit} >
             <Form.Group controlId="petForm.formBasicName">
               {/* <Form.Label>Name</Form.Label> */}
               <Form.Control
@@ -110,80 +111,9 @@ class NewPet extends Component {
                 name="medications"
                 placeholder="Pet's Medications" />
             </Form.Group>
-{/* 
-                <br></br>
-              <label>Name: 
-                <input
-                type="text" 
-                name="name"
-                onChange={this.handleChange} 
-                value={this.state.name}
-                />
-              </label>
-              <br></br>
-
-            <label>Animal Type: 
-                <select name="animal_type"value={this.state.animal_type} onChange={this.handleChange}>
-                    <option value=""></option>                    
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="housefly">Housefly</option>
-                    <option value="rock">Rock</option>
-                    <option value="goat">Goat</option>
-                    <option value="elephant">Elephant</option>
-                    <option value="snake">Snake</option>
-                </select>
-              </label>
-              <br></br>
-
-            <label>Breed: 
-                <input
-                type="text" 
-                name="breed"
-                onChange={this.handleChange} 
-                value={this.state.breed}
-                />
-              </label>
-              <br></br>
-            
-              <label>Vet: 
-                <input
-                type="text" 
-                name="vet_name"
-                onChange={this.handleChange} 
-                value={this.state.vet_name}
-                />
-                <input
-                type="text" 
-                name="vet_phone"
-                onChange={this.handleChange} 
-                value={this.state.vet_phone}
-                />
-              </label>
-              <br></br>
-
-              <label>Medications: 
-                <input
-                type="text" 
-                name="medications"
-                onChange={this.handleChange} 
-                value={this.state.medications}
-                />
-              </label>
-              {/* <br></br>
-
-              <label> Add an image
-                <input 
-                  type="file" 
-                  name="image" 
-                  accept="image/*"
-                  onChange={this.handleChange} 
-                  value={this.state.image}
-                 />
-              </label> */}
-              <br></br>
-              <br></br> */}
-            <input type="submit" />
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
          </Form>
         </div>
       );

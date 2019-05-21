@@ -22,7 +22,7 @@ const alert = useAlert()
     } 
 
     return(
-        <div>
+        <div className="ReminderButton">
             <Button variant="info" onClick={() => { 
         todaysAlerts()
         }}

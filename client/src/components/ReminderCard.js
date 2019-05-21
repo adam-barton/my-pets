@@ -1,5 +1,4 @@
 import React from 'react';
-import ReminderNotes from './ReminderNotes'
 
 function ReminderCard(props) {
 

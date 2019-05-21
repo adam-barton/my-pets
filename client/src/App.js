@@ -23,7 +23,7 @@ class App extends Component {
         <Router>
           <NavBar />
           <Notify today_reminders={this.props.today_reminders} />
-          <Route exact path="/new-pet" component={NewPet} />
+          <Route exact path="/pets/new" component={NewPet} />
           <Route exact path="/" component={PetProfileContainer} />
           <Route exact path="/reminders/new" component={RemindersForm} />
         </Router>

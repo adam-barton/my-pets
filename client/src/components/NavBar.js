@@ -4,11 +4,10 @@ import Nav from 'react-bootstrap/Nav'
 import { useAlert } from 'react-alert'
 
 
-
 const link = {
   width: '110px',
   padding: '5px',
-  margin: '2px 2px 0px',
+  margin: '5px 2px 0px',
   // background: 'white',
   background: '#f5f5f5',
   textDecoration: 'none',
@@ -27,11 +26,10 @@ const NavBar = props => {
           exact
           style={link}
           activeStyle={{
-            borderLeft: '2px solid #dee2e6',
-            borderRight: '2px solid #dee2e6',
-            borderTop: '2px solid #dee2e6',
-            borderBottom: '0px',
-
+            border: '2px solid #dee2e6',
+            // borderRight: '2px solid #dee2e6',
+            // borderTop: '2px solid #dee2e6',
+            borderBottom: '1px solid transparent',
           }}>
           Home
         </NavLink>
@@ -41,10 +39,10 @@ const NavBar = props => {
           exact 
           style={link}
           activeStyle={{
-            borderLeft: '2px solid #dee2e6',
-            borderRight: '2px solid #dee2e6',
-            borderTop: '2px solid #dee2e6',
-            borderBottom: '0px',
+            border: '2px solid #dee2e6',
+            // borderRight: '2px solid #dee2e6',
+            // borderTop: '2px solid #dee2e6',
+            borderBottom: '1px solid transparent',
           }}>
         Add a new pet
         </NavLink>
@@ -54,10 +52,10 @@ const NavBar = props => {
           exact 
           style={link}
           activeStyle={{
-            borderLeft: '2px solid #dee2e6',
-            borderRight: '2px solid #dee2e6',
-            borderTop: '2px solid #dee2e6',
-            borderBottom: '0px',
+            border: '2px solid #dee2e6',
+            // borderRight: '2px solid #dee2e6',
+            // borderTop: '2px solid #dee2e6',
+            borderBottom: '1px solid transparent',
           }}>
           New Reminder
         </NavLink>

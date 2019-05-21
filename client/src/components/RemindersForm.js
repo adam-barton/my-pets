@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { addReminder } from '../actions/reminderActions';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class RemindersForm extends Component {
     state = {
@@ -41,49 +43,55 @@ class RemindersForm extends Component {
       return (
         <div>
           <h3>Add a new reminder</h3>
-          <form onSubmit={this.handleSubmit} >
-                <br></br>
-                <label> Date: </label>
-                <DatePicker
-                  selected={this.state.date}
-                  onChange={(e) => this.setDay(e)}
-                  showTimeSelect
-                  timeFormat="HH:mm"
-                  timeIntervals={1}
-                  dateFormat="MMMM d, yyyy"
-                  timeCaption="time"
-                />
-                <br></br>
-              <label>Category: 
-                <input
+          
+          <Form className="FormContainer" onSubmit={this.handleSubmit} >
+
+          <Form.Group controlId="reminderForm.formBasicDate">
+              Date  
+              <DatePicker
+                    selected={this.state.date}
+                    onChange={(e) => this.setDay(e)}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    timeIntervals={1}
+                    dateFormat="MMMM d, yyyy"
+                    timeCaption="time"
+                  />
+            </Form.Group>
+
+            <Form.Group controlId="reminderForm.formBasicCategory">
+              <Form.Control
+                onChange={this.handleChange} 
+                value={this.state.name} 
                 type="text" 
                 name="category"
-                onChange={this.handleChange} 
-                value={this.state.category}
-                />
-              </label>
-              <br></br>
+                placeholder="Reminder" />
+            </Form.Group>
 
-              <label>Pet: 
-                <select onChange={(e) => this.setState({pet_id: e.target.value})}>
-                <option key={0} value={""}></option>
+            <Form.Group controlId="reminderForm.ControlSelect"
+              onChange={(e) => this.setState({pet_id: e.target.value})}
+                >             
+                <Form.Control as="select" name="pet">
+                <option value="">Pet</option>                    
+                {/* <option key={0} value={""}></option> */}
                     {this.props.pets.map((pet) => <option key={pet.id} value={pet.id}>{pet.name}</option>)}
-                </select>
-                </label><br></br>
+              </Form.Control>
+            </Form.Group>
 
-              <label>notes: 
-                <input
-                type="text" 
-                name="notes"
+
+            <Form.Group controlId="reminderForm.formBasicNotes">
+              <Form.Control
                 onChange={this.handleChange} 
-                value={this.state.notes}
-                />
-              </label>
+                value={this.state.name} 
+                type="textarea" 
+                name="notes"
+                placeholder="Notes" />
+            </Form.Group>
 
-              <br></br>
-              <br></br>
-            <input type="submit" />
-         </form>
+            <Button variant="primary" type="submit">
+                Submit
+            </Button>
+          </Form>
         </div>
       );
     }

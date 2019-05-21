@@ -42,7 +42,7 @@ class NewPet extends Component {
 
     render() {
       return (
-        <div className="PetFormContainer">
+        <div className="FormContainer">
           <h3>Add a new pet</h3>
           <Form className="PetForm"onSubmit={this.handleSubmit} >
             <Form.Group controlId="petForm.formBasicName">
@@ -59,7 +59,6 @@ class NewPet extends Component {
                 onChange={this.handleChange} 
                 value={this.state.animal_type} 
                 >
-                {/* <Form.Label>Pet Type</Form.Label> */}
                 <Form.Control as="select" name="animal_type">
                 <option value="">Pet Type</option>                    
                     <option value="dog">Dog</option>

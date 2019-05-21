@@ -91,9 +91,10 @@ body {
     max-width: 50%;
 }
 
-.NavBar {
-    width: 40%;
-}
+
+/* .NavBar {
+    width: 75%;
+} */
 
 @keyframes App-logo-spin {
     from {

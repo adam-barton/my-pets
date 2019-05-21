@@ -43,21 +43,8 @@ class RemindersForm extends Component {
       return (
         <div>
           <h3>Add a new reminder</h3>
-          
-          <Form className="FormContainer" onSubmit={this.handleSubmit} >
 
-          <Form.Group controlId="reminderForm.formBasicDate">
-              Date  
-              <DatePicker
-                    selected={this.state.date}
-                    onChange={(e) => this.setDay(e)}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    timeIntervals={1}
-                    dateFormat="MMMM d, yyyy"
-                    timeCaption="time"
-                  />
-            </Form.Group>
+          <Form className="FormContainer" onSubmit={this.handleSubmit} >
 
             <Form.Group controlId="reminderForm.formBasicCategory">
               <Form.Control
@@ -86,6 +73,19 @@ class RemindersForm extends Component {
                 type="textarea" 
                 name="notes"
                 placeholder="Notes" />
+            </Form.Group>
+
+            <Form.Group controlId="reminderForm.formBasicDate">
+              Date  
+              <DatePicker
+                    selected={this.state.date}
+                    onChange={(e) => this.setDay(e)}
+                    showTimeSelect
+                    timeFormat="HH:mm"
+                    timeIntervals={1}
+                    dateFormat="MMMM d, yyyy"
+                    timeCaption="time"
+                  />
             </Form.Group>
 
             <Button variant="primary" type="submit">

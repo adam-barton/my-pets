@@ -12,7 +12,6 @@ import Footer from './components/Footer'
 import PetProfileContainer from './containers/PetProfileContainer'
 import NewPet from './components/NewPet';
 import RemindersForm from './components/RemindersForm';
-import Notify from './components/Notify'
 
 class App extends Component {
 

@@ -27,10 +27,8 @@ const NavBar = props => {
           style={link}
           activeStyle={{
             border: '2px solid #dee2e6',
-            // borderRight: '2px solid #dee2e6',
-            // borderTop: '2px solid #dee2e6',
             borderBottom: '0px',
-            boxShadow: '3px 3px #f5f5f5'
+            boxShadow: '0px 4px #f5f5f5'
           }}>
           Home
         </NavLink>
@@ -41,10 +39,8 @@ const NavBar = props => {
           style={link}
           activeStyle={{
             border: '2px solid #dee2e6',
-            // borderRight: '2px solid #dee2e6',
-            // borderTop: '2px solid #dee2e6',
             borderBottom: '0px',
-            boxShadow: '3px 3px #f5f5f5'
+            boxShadow: '0px 4px #f5f5f5'
           }}>
         Add a new pet
         </NavLink>
@@ -55,10 +51,8 @@ const NavBar = props => {
           style={link}
           activeStyle={{
             border: '2px solid #dee2e6',
-            // borderRight: '2px solid #dee2e6',
-            // borderTop: '2px solid #dee2e6',
             borderBottom: '0px',
-            boxShadow: '1px 1px #f5f5f5'
+            boxShadow: '0px 4px #f5f5f5'
           }}>
           New Reminder
         </NavLink>
@@ -75,8 +69,3 @@ const NavBar = props => {
 };
 
 export default NavBar;
-
-
-
-
-// className="justify-content-center Navbar"

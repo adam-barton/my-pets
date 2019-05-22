@@ -50,6 +50,7 @@ class RemindersForm extends Component {
               <Form.Control
                 onChange={this.handleChange} 
                 value={this.state.name} 
+                required={true}
                 type="text" 
                 name="category"
                 placeholder="Reminder" />
@@ -60,7 +61,6 @@ class RemindersForm extends Component {
                 >             
                 <Form.Control as="select" name="pet">
                 <option value="">Pet</option>                    
-                {/* <option key={0} value={""}></option> */}
                     {this.props.pets.map((pet) => <option key={pet.id} value={pet.id}>{pet.name}</option>)}
               </Form.Control>
             </Form.Group>
@@ -77,15 +77,15 @@ class RemindersForm extends Component {
 
             <Form.Group controlId="reminderForm.formBasicDate">
               <DatePicker
-                    inline
-                    className="DatePicker"
-                    selected={this.state.date}
-                    onChange={(e) => this.setDay(e)}
-                    showTimeSelect
-                    timeFormat="HH:mm"
-                    timeIntervals={1}
-                    dateFormat="MMMM d, yyyy"
-                    timeCaption="time"
+                  inline
+                  className="DatePicker"
+                  selected={this.state.date}
+                  onChange={(e) => this.setDay(e)}
+                  showTimeSelect
+                  timeFormat="HH:mm"
+                  timeIntervals={1}
+                  dateFormat="MMMM d, yyyy"
+                  timeCaption="time"
                   />
             </Form.Group>
             <br></br>

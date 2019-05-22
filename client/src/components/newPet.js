@@ -46,8 +46,8 @@ class NewPet extends Component {
           <h3>Add a new pet</h3>
           <Form className="PetForm"onSubmit={this.handleSubmit} >
             <Form.Group controlId="petForm.formBasicName">
-              {/* <Form.Label>Name</Form.Label> */}
               <Form.Control
+              required={true}
                 onChange={this.handleChange} 
                 value={this.state.name} 
                 type="text" 

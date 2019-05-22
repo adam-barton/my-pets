@@ -3,7 +3,7 @@ import { useAlert } from 'react-alert'
 import Button from 'react-bootstrap/Button';
 
 
-function Notify(props) {
+const Notify = props => {
 const alert = useAlert()
 
   function todaysAlerts() {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ReminderCard(props) {
+const ReminderCard = props => {
 
     const reminderClassname = () => { 
         const reminderDate = new Date(props.reminder.displayable_date);

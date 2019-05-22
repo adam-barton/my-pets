@@ -13,9 +13,9 @@ body {
 }
 
 .App-header {
-    background-color: #282c34;
-    height: 10%;
+    /* background-color: #282c34; */
     /* min-height: 100vh; */
+    background-color: #3e4b66;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 }
 
 .ProfileCard {
-    border: 3px solid black;
+    border: 3px solid darkgray;
     margin: 1% 3% 3% 3%;
     padding: 20px;
 }
@@ -91,10 +91,10 @@ body {
     max-width: 50%;
 }
 
-
-/* .NavBar {
-    width: 75%;
-} */
+.NavBar {
+    background-color: #3e4b66;
+    border-bottom: 2px solid #dee2e6;
+}
 
 @keyframes App-logo-spin {
     from {

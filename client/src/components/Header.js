@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header() {
+const Header = () => {
     return( 
         <div className="App-header">
             <h1>Pet Reminders</h1>

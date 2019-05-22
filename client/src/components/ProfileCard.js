@@ -2,7 +2,7 @@ import React from 'react';
 import RemindersContainer from '../containers/RemindersContainer';
 import Button from 'react-bootstrap/Button';
 
-function ProfileCard(props) {
+const ProfileCard = props => {
 
     return(
         <div className="ProfileCard">

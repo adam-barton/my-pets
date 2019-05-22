@@ -76,8 +76,9 @@ class RemindersForm extends Component {
             </Form.Group>
 
             <Form.Group controlId="reminderForm.formBasicDate">
-              Date  
               <DatePicker
+                    inline
+                    className="DatePicker"
                     selected={this.state.date}
                     onChange={(e) => this.setDay(e)}
                     showTimeSelect
@@ -87,7 +88,7 @@ class RemindersForm extends Component {
                     timeCaption="time"
                   />
             </Form.Group>
-
+            <br></br>
             <Button variant="primary" type="submit">
                 Submit
             </Button>

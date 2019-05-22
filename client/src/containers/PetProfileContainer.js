@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { fetchPets, addPet, deletePet, updatePet } from '../actions/petActions';
 import {fetchReminders} from '../actions/reminderActions'
 import ProfileCard from '../components/ProfileCard'
+import Notify from '../components/Notify'
 
 class PetProfileContainer extends Component {
     componentWillMount() {
@@ -19,6 +20,7 @@ class PetProfileContainer extends Component {
             />)
     return(
         <div>
+          <Notify today_reminders={this.props.today_reminders} />
             {petsList}
         </div>
     )}
@@ -26,6 +28,7 @@ class PetProfileContainer extends Component {
 }
 const mapStateToProps = state => ({
     pets: state.petsReducer.pets,
+    today_reminders: state.remindersReducer.today_reminders
     })
 
 export default connect(mapStateToProps, {fetchPets, addPet, deletePet, updatePet, fetchReminders})(PetProfileContainer);

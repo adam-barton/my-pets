@@ -8,8 +8,13 @@ class RemindersContainer extends Component {
     render() {
         const {reminders, pet, deleteReminder} = this.props;
         const associatedReminders = reminders.filter(reminder => reminder.pet_id === pet.id)
+
+        const sortedReminders = associatedReminders.sort((a,b) => {
+            return new Date(a.date).getTime() - 
+            new Date(b.date).getTime()
+        });
     
-        const reminderList = associatedReminders.map(reminder => {
+        const reminderList = sortedReminders.map(reminder => {
         return <ReminderCard key={reminder.id} reminder={reminder} deleteReminder={deleteReminder} />
         })
 

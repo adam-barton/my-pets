@@ -6,7 +6,9 @@ To learn React, I created this simple app to set reminders for a pet's important
 ## Installation
 
 clone the repo, cd into the `client` directory and run `npm install`.
-cd back into the root `my-pets` directory and run `rake start` to open the project in a browser.
+cd back into the root `my-pets` directory and run `rake start` to open the project in a browser. 
+
+both NPM and Node should be version 8 or newer.
 
 ## Contributing
 
